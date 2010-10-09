@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.xml
   def new
+    @title = "Create a new user"
     @user = User.new
 
     respond_to do |format|
