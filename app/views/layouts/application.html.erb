@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-	 <%= stylesheet_link_tag :all %>
-	 <%= javascript_include_tag :defaults %>
-	 <%= csrf_meta_tag %>
-    <title>Cajon | <%= @title %></title>
+	<!--[if lt IE 9]>
+	    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->  
+	<%= render 'layouts/stylesheets' %>  
+    <title><%= title %></title>
     <%= csrf_meta_tag %>
   </head>
-  <body>
-    <%= yield %>
-  </body>
+  <div class="container">
+      <header>
+        <%= image_tag("logo.png", :alt => "Sample App", :class => "round") %>
+        <nav class="round">
+          <ul>
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "Contact", contact_path %></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="round">
+        <%= yield %>
+      </section>
+	  <footer>
+		&copy; Cajon 2010
+	  </footer>
+    </div>
 </html>
  
