@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
 	belongs_to :user
 	
-	validates :title, :length => { :maximum => 140 }
+	validates_presence_of :title 
+	validates_presence_of :user 
+	validates :title, :length => { :maximum => 250 }
 end
