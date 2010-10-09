@@ -1,0 +1,3 @@
+# A .net developers attempt to do rails the right way...
+
+Cajon - A simple blog engine built in rails 3 with cucumber and other bits.  My attempt to shake off .net habits and build a rails app the rails way... by PaulCampbell (http://webpangea.blogspot.com).
