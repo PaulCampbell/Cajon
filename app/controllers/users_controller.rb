@@ -14,14 +14,14 @@ class UsersController < ApplicationController
   # GET /users/1.xml
   def show
     @user = User.find(params[:id])
-
+	@title = @user.name 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @user }
     end
   end
 
-  # GET /users/new
+  # GET /users/new 
   # GET /users/new.xml
   def new
     @title = "Create a new user"
