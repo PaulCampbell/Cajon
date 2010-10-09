@@ -4,7 +4,6 @@ Cajon::Application.routes.draw do
   get "pages/about"
 
   resources :posts
-
   resources :users
   
   match '/contact', :to => 'pages#contact'
