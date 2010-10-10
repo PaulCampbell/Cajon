@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
+  before_filter :authenticate, :only => [:edit, :update]
+  before_filter :correct_user, :only => [:edit, :update]
+
   # GET /users
   # GET /users.xml
   def index
-    @users = User.all
-
+    @users = User.paginate(:page => params[:page])
+	@title = "Blog roll"
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @users }
@@ -31,10 +34,11 @@ class UsersController < ApplicationController
       format.html # new.html.erb
       format.xml  { render :xml => @user }
     end
-  end
+  end 
 
   # GET /users/1/edit
   def edit
+    @title = "Edit user"
     @user = User.find(params[:id])
   end
 
@@ -64,9 +68,11 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
+	    flash[:success] = "Profile updated"
         format.html { redirect_to(@user, :notice => 'User was successfully updated.') }
         format.xml  { head :ok }
       else
+	    @title = "Edit user"
         format.html { render :action => "edit" }
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
@@ -84,4 +90,16 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private
+
+    def authenticate
+      deny_access unless signed_in?
+    end
+	
+	def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_path) unless current_user?(@user)
+    end
+	
 end

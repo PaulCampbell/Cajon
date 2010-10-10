@@ -21,6 +21,29 @@ module SessionsHelper
   def signed_in?
     !current_user.nil?
   end
+  
+  def deny_access
+    store_location
+    flash[:notice] = "Please sign in to access this page."
+    redirect_to signin_path
+  end
+  
+  def store_location
+    session[:return_to] = request.fullpath
+  end
+
+  def redirect_back_or(default)
+    redirect_to(session[:return_to] || default)
+    clear_return_to
+  end
+
+  def clear_return_to
+    session[:return_to] = nil
+  end
+  
+  def current_user?(user)
+    user == current_user
+  end
 
   private
 
@@ -31,5 +54,7 @@ module SessionsHelper
     def remember_token
       cookies.signed[:remember_token] || [nil, nil]
     end
+	
+	
   
 end

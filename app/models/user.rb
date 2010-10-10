@@ -34,6 +34,9 @@ class User < ActiveRecord::Base
 						 
 	before_save :encrypt_password
 	
+	cattr_reader :per_page
+    @@per_page = 10
+	
 	def has_password?(submitted_password)
 		encrypted_password == encrypt(submitted_password)
 	end
