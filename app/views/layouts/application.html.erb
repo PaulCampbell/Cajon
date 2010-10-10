@@ -9,18 +9,11 @@
     <%= csrf_meta_tag %>
   </head>
   <div class="container">
-      <header> 
-        <% logo = image_tag("logo.png", :alt => "Sample App", :class => "round") %>
-		<%= link_to logo, root_path %>
-        <nav class="round">
-          <ul>
-            <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "About", about_path %></li>
-            <li><%= link_to "Contact", contact_path %></li>
-          </ul>
-        </nav>
-      </header>
+      <%= render 'layouts/header'%>
       <section class="round">
+		 <% flash.each do |key, value| %>
+	          <div class="flash <%= key %>"><%= value %></div>
+	        <% end %>
         <%= yield %>
       </section>
 	  <footer>
