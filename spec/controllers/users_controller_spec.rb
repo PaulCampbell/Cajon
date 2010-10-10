@@ -72,6 +72,7 @@ describe UsersController do
         post :create, :user => @attr
         response.should render_template('new')
       end
+	
     end
 	
 	describe "success" do
@@ -90,7 +91,14 @@ describe UsersController do
       it "should redirect to the user show page" do
         post :create, :user => @attr
         response.should redirect_to(user_path(assigns(:user)))
-      end    
+      end  
+	  
+		  
+	  it "should sign the user in" do
+	    post :create, :user => @attr
+		controller.should be_signed_in
+	  end
+	    
     end
   end
  
