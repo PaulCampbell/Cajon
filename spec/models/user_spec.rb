@@ -60,6 +60,12 @@ describe User do
     user_with_duplicate_email.should_not be_valid
   end
   
+  it "should reject long descriptions" do
+	  long_description = "a" * 251
+	  hash = @attr.merge(:description => long_description)
+	  User.new(hash).should_not be_valid
+  end
+	
   
   describe "password validations" do
 
@@ -84,6 +90,7 @@ describe User do
       hash = @attr.merge(:password => long, :password_confirmation => long)
       User.new(hash).should_not be_valid
     end
+
   end
   
   describe "password encryption" do
@@ -125,5 +132,25 @@ describe User do
 	
 	
   end
+  
+  describe "admin access" do	
+	before(:each) do
+	  @user = User.create!(@attr)
+	end
+	
+	it "should respond to admin" do
+	  @user.should respond_to(:admin)
+	end
+	
+	it "should not be an admin by default" do
+      @user.should_not be_admin
+    end
+
+    it "should be convertible to an admin" do
+      @user.toggle!(:admin)
+      @user
+	end
+  end
+  
   
 end

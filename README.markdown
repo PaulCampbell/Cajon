@@ -1,3 +1,3 @@
-# A .net developers attempt to do rails the right way...
+# Cajon: Blogging software for teams
 
-Cajon - A simple blog engine built in rails 3 with cucumber and other bits.  My attempt to shake off .net habits and build a rails app the rails way... by PaulCampbell (http://webpangea.blogspot.com).
+Cajon is a blog for teams built with Rails. It aims to be a simple HTML5 blog which allows multiple users to blog and aggregates the feeds to allow for company or team to set up a shared blog for marketing or just posting interesting things. By PaulCampbell (http://webpangea.blogspot.com).

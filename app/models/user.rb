@@ -14,9 +14,9 @@
 
 class User < ActiveRecord::Base
 	has_many :posts
-	
+	 
 	attr_accessor :password
-    attr_accessible :name, :email, :password, :password_confirmation
+    attr_accessible :name, :email, :password, :password_confirmation, :description 
 	
 	email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	
@@ -31,6 +31,8 @@ class User < ActiveRecord::Base
     validates :password, :presence     => true,
                          :confirmation => true,
                          :length       => { :within => 6..40 }
+						 
+	validates :description, :length => { :maximum => 250 }
 						 
 	before_save :encrypt_password
 	
@@ -52,7 +54,7 @@ class User < ActiveRecord::Base
       (user && user.salt == cookie_salt) ? user : nil
     end
 	
-	
+	 
 	private 
 		def encrypt_password
 			self.salt = make_salt if new_record?
