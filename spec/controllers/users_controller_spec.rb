@@ -62,19 +62,39 @@ describe UsersController do
       get :show, :id => @user
       response.should have_selector("h1>img", :class => "gravatar")
     end
-  end
+  end 
   
   describe "GET 'new'" do
+  
+    describe "as a non signed in user" do
 
-    it "should be successful" do
-      get :new
-      response.should be_success
-    end
+      it "should be successful" do
+        get :new
+        response.should be_success
+      end
 
-    it "should have the right title" do
-      get :new
-      response.should have_selector("title", :content => "Create a new user")
-    end
+      it "should have the right title" do
+        get :new
+        response.should have_selector("title", :content => "Create a new user")
+      end
+	
+	end
+	
+	
+	describe "as a signed in user" do
+	
+	  before(:each) do
+        @user = Factory(:user)
+        test_sign_in(@user)
+      end
+
+	  it "should redirect to the users page" do
+	    get :new
+		response.should redirect_to(users_path)
+	  end
+	  
+	end
+	
   end
   
   describe "POST 'create'" do
@@ -129,6 +149,20 @@ describe UsersController do
 	  end
 	    
     end
+	
+	describe "as a signed in user" do
+	
+	  before(:each) do
+        @user = Factory(:user)
+        test_sign_in(@user)
+      end
+	
+	  it "should redirect to the users page" do
+	    post :create, :user => @attr
+		response.should redirect_to(users_path)
+	  end
+	end
+	
   end
  
   

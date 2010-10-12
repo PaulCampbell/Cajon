@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   before_filter :authenticate, :only => [:edit, :update]
   before_filter :correct_user, :only => [:edit, :update]
+  before_filter :non_signed_in_user, :only => [:new , :create]
   before_filter :admin_user,   :only => :destroy
+  
 
   # GET /users
   # GET /users.xml
@@ -91,8 +93,8 @@ class UsersController < ApplicationController
       format.html { redirect_to(users_url) }
       format.xml  { head :ok }
     end
-  end
-  
+  end 
+   
   private
 
     def authenticate
@@ -105,7 +107,16 @@ class UsersController < ApplicationController
     end
 	
 	def admin_user
-      redirect_to(root_path) unless current_user.admin?
+	  if !current_user.nil? 
+	     redirect_to(root_path) unless current_user.admin? 
+	  else
+	    redirect_to(signin_path)
+	  end
+     
     end
+	
+	def non_signed_in_user
+	  redirect_to(users_path) unless current_user.nil?
+	end
 	
 end

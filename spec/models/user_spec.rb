@@ -148,7 +148,7 @@ describe User do
 
     it "should be convertible to an admin" do
       @user.toggle!(:admin)
-      @user
+      @user.should be_admin
 	end
   end
   
