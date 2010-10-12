@@ -14,9 +14,12 @@
 class Post < ActiveRecord::Base
 	belongs_to :user
 	
-	validates_presence_of :title 
-	validates_presence_of :user 
-	validates :title, :length => { :maximum => 250 }
+	validates :title, :presence => true, :length => {:maximum => 3000 }
+	validates :user_id, :presence => true 
+	validates :title, :length => { :maximum => 200 }
 	
-	 attr_accessor :title, :content
+	attr_accessor :title, :content
+	
+	default_scope :order => 'posts.created_at DESC'
+	
 end
