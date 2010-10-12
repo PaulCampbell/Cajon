@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_filter :authenticate, :only => [:create, :destroy, :edit]
+
   # GET /posts
   # GET /posts.xml
   def index
@@ -40,11 +42,11 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.xml
   def create
-    @post = Post.new(params[:post])
+    @post = current_user.posts.build(params[:post])
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to(@post, :notice => 'Post was successfully created.') }
+        format.html { redirect_to(@post, :notice => 'Post created.') }
         format.xml  { render :xml => @post, :status => :created, :location => @post }
       else
         format.html { render :action => "new" }
@@ -60,7 +62,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
-        format.html { redirect_to(@post, :notice => 'Post was successfully updated.') }
+        format.html { redirect_to(@post, :notice => 'Post updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

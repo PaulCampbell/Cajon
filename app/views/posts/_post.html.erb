@@ -1,0 +1,5 @@
+<li class="post">
+	<h2><%= link_to post.title, post_path(post) %></h2>
+	<div class="timestamp"><%= time_ago_in_words(post.created_at) %> ago.</div>
+	<div class="postcontent"><%= post.content %></div>
+</li>

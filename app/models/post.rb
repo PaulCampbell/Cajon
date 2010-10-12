@@ -18,8 +18,11 @@ class Post < ActiveRecord::Base
 	validates :user_id, :presence => true 
 	validates :title, :length => { :maximum => 200 }
 	
-	attr_accessor :title, :content
+	attr_accessible :title, :content
 	
 	default_scope :order => 'posts.created_at DESC'
+	
+	cattr_reader :per_page
+    @@per_page = 10
 	
 end
