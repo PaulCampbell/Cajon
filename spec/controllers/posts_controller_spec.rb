@@ -64,7 +64,90 @@ describe PostsController do
         flash[:notice].should =~ /Post created./i
       end
     end
+	
+
+	
+  end
+  
+  describe "GET 'new'" do
+  
+  	describe "for unauthenticated user" do
+	  it "should deny access" do
+	    get :new
+		response.should redirect_to(signin_path)
+	  end
+	
+	end
+  
   end
   
   
+  
+  describe "DELETE 'destroy'" do
+
+    describe "for incorrect user" do
+
+      before(:each) do
+        @user = Factory(:user)
+        wrong_user = Factory(:user, :email => Factory.next(:email))
+        test_sign_in(wrong_user)
+        @post = Factory(:post, :user => @user)
+      end
+
+      it "should deny access" do
+        delete :destroy, :id => @post
+        response.should redirect_to(root_path)
+      end
+    end
+
+    describe "for the correct user" do
+
+      before(:each) do
+        @user = test_sign_in(Factory(:user))
+        @post = Factory(:post, :user => @user)
+      end
+
+      it "should destroy the post" do
+        lambda do 
+          delete :destroy, :id => @post
+        end.should change(Post, :count).by(-1)
+      end
+    end
+  end
+  
+  
+  describe "GET 'edit'" do
+  
+    describe "for the correct user" do 
+
+      before(:each) do
+        @user = Factory(:user)
+        test_sign_in(@user)
+		@post = Factory(:post, :user => @user)
+      end
+	
+	  it "should be successful" do
+        get :edit, :id => @user
+        response.should be_success
+      end
+	
+	end
+	
+	 describe "for the incorrect user" do 
+
+      before(:each) do
+        @user = Factory(:user)
+        wrong_user = Factory(:user, :email => Factory.next(:email))
+        test_sign_in(wrong_user)
+		@post = Factory(:post, :user => @user)
+      end
+	  
+	  it "should be unsuccessful" do
+        get :edit, :id => @user
+        response.should_not be_success
+      end
+	
+	end
+  
+  end
 end

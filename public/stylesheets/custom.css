@@ -136,3 +136,23 @@ ul.users {
   list-style: none;
 }
 
+ul.posts li {
+  list-style: none;
+  margin-bottom:20px;
+  border-bottom:solid 1px #888;
+}
+
+ul.posts li article {
+  margin-bottom:10px;
+}
+
+ul.posts li h1{
+  padding-bottom:10px;
+  margin-bottom:0px;
+  font-size:175%
+}
+
+ul.posts li .timestamp {
+  margin-bottom:10px;
+  font-weight:bold;
+  }

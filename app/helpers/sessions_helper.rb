@@ -22,6 +22,25 @@ module SessionsHelper
     !current_user.nil?
   end
   
+  
+	def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_path) unless current_user?(@user)
+    end
+	
+	def admin_user
+	  if !current_user.nil? 
+	     redirect_to(root_path) unless current_user.admin? 
+	  else
+	    redirect_to(signin_path)
+	  end
+     
+    end
+	
+	def non_signed_in_user
+	  redirect_to(users_path) unless current_user.nil?
+	end
+  
   def authenticate
 	deny_access unless signed_in?
   end

@@ -1,20 +1,8 @@
+<article>
 <p id="notice"><%= notice %></p>
-
+<h1><%= @post.title %></h1>
 <p>
-  <b>Content:</b>
   <%= @post.content %>
 </p>
+</article>
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @post.user_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>

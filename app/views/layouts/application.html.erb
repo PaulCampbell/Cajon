@@ -11,16 +11,20 @@
   </head>
   <div class="container">
       <%= render 'layouts/header'%>
-      <section class="round">
+      <div class="largesection span-15">
 		 <% flash.each do |key, value| %>
 	          <div class="flash <%= key %>"><%= value %></div>
 	        <% end %>
         <%= yield %>
-      </section>
-	  <footer>
+      </div>
+	  <aside class="span-7 last">
+		dsf
+	  </aside>
+	  <footer class="span-22 last">
 		&copy; Cajon 2010
+		<%= debug(params) if Rails.env.development? %>
 	  </footer>
-	  <%= debug(params) if Rails.env.development? %>
+	  
     </div>
 </html>
  
