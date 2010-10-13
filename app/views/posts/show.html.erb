@@ -1,4 +1,9 @@
 <article>
+	<% if !current_user.nil? %>
+<% if current_user == @post.user %>
+	<%= link_to "Delete post", { :action => "destroy", :id => @post }, :confirm => "Are you sure you want to delete this post?" %>
+<% end  %>
+	<% end if %>
 <p id="notice"><%= notice %></p>
 <h1><%= @post.title %></h1>
 <p>

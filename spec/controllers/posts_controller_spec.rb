@@ -4,7 +4,7 @@ describe PostsController do
   
   render_views
 
-  describe "access control" do
+  describe "access control for non signed in user" do
 
     it "should deny access to 'create'" do
       post :create
