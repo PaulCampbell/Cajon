@@ -13,9 +13,9 @@ describe "PostsLinks" do
 	  @post = Factory(:post, :user => @user)	  
 	end
   
-    it "should have a delete link" do
+    it "should have an edit link" do
 	  visit post_path(@post)
-	  response.should have_selector("a", :content => "Delete")
+	  response.should have_selector("a", :content => "Edit")
 	end
 	
   end
@@ -33,9 +33,9 @@ describe "PostsLinks" do
       end
 	  
 	  
-	  it "should not have a delete link" do
+	  it "should not have an edit link" do
 	    visit post_path(@post)
-		response.should_not have_selector("a", :content => "Delete")
+		response.should_not have_selector("a", :content => "Edit")
 	  end
   
   end
@@ -47,9 +47,9 @@ describe "PostsLinks" do
 		@post = Factory(:post, :user => @user)
       end
     
-	it "should not have a delete link" do
+	it "should not have an edit link" do
 	  visit post_path(@post)
-	  response.should_not have_selector("a", :content => "Delete")
+	  response.should_not have_selector("a", :content => "Edit")
 	end
   
   end

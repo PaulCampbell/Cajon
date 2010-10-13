@@ -5,6 +5,11 @@ describe PostsController do
   render_views
 
   describe "access control for non signed in user" do
+  
+   before(:each) do
+       @user = Factory(:user)
+	   @post = Factory(:post, :user => @user)
+    end
 
     it "should deny access to 'create'" do
       post :create
@@ -12,8 +17,8 @@ describe PostsController do
     end
 
     it "should deny access to 'destroy'" do
-      delete :destroy, :id => 1
-      response.should redirect_to(signin_path)
+      delete :destroy, :id => @post.id
+      response.should redirect_to(root_path)
     end
   end
   

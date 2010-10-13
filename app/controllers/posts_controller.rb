@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :authenticate, :only => [:new, :create, :destroy]
+  before_filter :authenticate, :only => [:new, :create]
   before_filter :correct_user, :only => [:edit, :update, :destroy]
 
   # GET /posts
@@ -77,10 +77,18 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-
+    flash[:success] = "Post deleted"
     respond_to do |format|
       format.html { redirect_to(posts_url) }
       format.xml  { head :ok }
     end
   end
+  
+  private 
+	def correct_user
+	  @post = Post.find(params[:id])
+      @user = @post.user
+      redirect_to(root_path) unless current_user?(@user)
+    end
+  
 end
