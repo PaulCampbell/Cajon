@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :authenticate, :only => [:new, :create, :destroy, :edit]
+  before_filter :authenticate, :only => [:new, :create, :destroy]
   before_filter :correct_user, :only => [:edit, :update, :destroy]
 
   # GET /posts

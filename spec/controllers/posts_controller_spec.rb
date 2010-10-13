@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe PostsController do
+  
   render_views
 
   describe "access control" do
@@ -142,7 +143,7 @@ describe PostsController do
 		@post = Factory(:post, :user => @user)
       end
 	  
-	  it "should be unsuccessful" do
+	  it "should redirect to root" do
         get :edit, :id => @user
         response.should_not be_success
       end
@@ -150,4 +151,48 @@ describe PostsController do
 	end
   
   end
+  
+  describe "PUT 'update'" do
+    
+	describe "for the correct user" do 
+
+      before(:each) do
+        @user = Factory(:user)
+        test_sign_in(@user)
+		@post = Factory(:post, :user => @user)
+		@attr = { :title => "New title", :content => "New content" }
+      end
+	  
+	  it "should update the post" do
+	    put :update, :id => @post, :post => @attr
+		@post.reload
+		@post.title.should == @attr[:title]
+		@post.content.should == @attr[:content]
+	  end
+	  
+	  it "should redirect to the show post page" do
+	    put :update, :id => @post, :post => @attr
+		response.should redirect_to(post_path(@post))
+	  end
+	  
+	end
+   
+  end
+  
+  
+  describe "for incorrect user" do
+  
+    before(:each) do
+        @user = Factory(:user)
+        wrong_user = Factory(:user, :email => Factory.next(:email))
+        test_sign_in(wrong_user)
+        @post = Factory(:post, :user => @user)
+	end
+	
+	it "should deny access" do
+	  put :update, :id => @post, :post => @attr
+		response.should redirect_to(root_path)
+	end
+  end
+  
 end
