@@ -164,4 +164,5 @@ input[type=text], textarea {
 input[type=text].title { 
  font-size:large;
 }
-
+.sign_in_box { }
+.sign_in_box input[type=text], .sign_in_box input[type=password] { width:250px; }

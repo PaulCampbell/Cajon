@@ -1,14 +1,2 @@
-<article>
-	<% if !current_user.nil? %>
-<% if current_user == @post.user %>
-	<%= link_to "Edit post", { :action => "edit", :id => @post } %>
-<% end  %>
-	<% end %>
-<h1><%= @post.title %></h1>
-<span class="author"><%= @post.user.name %></span><br/>
-<time><%= @post.created_at %></time>
-<p>
-  <%=raw @post.content %>
-</p>
-</article>
+<%= render @post %>
 

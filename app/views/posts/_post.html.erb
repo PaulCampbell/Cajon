@@ -1,7 +1,12 @@
-<li class="post">
+
 	<article>
+		<% if !current_user.nil? %>
+	<% if current_user == post.user %>
+		<%= link_to "Edit post", {:controller => "posts", :action => "edit", :id => post } %>
+	<% end  %>
+		<% end %>
+		
 		<h1><%= link_to post.title, post_path(post) %></h1>
-		<time><%= post.created_at %> ago.</time>
+		<time><%= format_date(post.created_at) %></time>
 		<div class="postcontent"><%=raw post.content %></div>
 	</article>
-</li>
