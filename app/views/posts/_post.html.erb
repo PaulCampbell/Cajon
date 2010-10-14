@@ -2,6 +2,6 @@
 	<article>
 		<h1><%= link_to post.title, post_path(post) %></h1>
 		<time><%= post.created_at %> ago.</time>
-		<div class="postcontent"><%= post.content %></div>
+		<div class="postcontent"><%=raw post.content %></div>
 	</article>
 </li>

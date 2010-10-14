@@ -1,3 +1,5 @@
+require 'vendor/reversemarkdown/reverse_markdown'
+
 class PostsController < ApplicationController
   before_filter :authenticate, :only => [:new, :create]
   before_filter :correct_user, :only => [:edit, :update, :destroy]
@@ -38,6 +40,9 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+	r = ReverseMarkdown.new
+	content = r.parse_string(@post.content)
+	@post.content = content
   end
 
   # POST /posts

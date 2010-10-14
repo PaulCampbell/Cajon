@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   # GET /users/1.xml
   def show
     @user = User.find(params[:id])
-	@posts = @user.posts.paginate(:page => params[:page])
+	@posts = @user.posts.paginate(:page => params[:page], :per_page => 10)
 	@title = @user.name 
     respond_to do |format|
       format.html # show.html.erb
@@ -73,7 +73,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(:name => params[:user][:name], :email => params[:user][:email])
 	    flash[:success] = "Profile updated"
-        format.html { redirect_to(@user, :notice => 'User was successfully updated.') }
+        format.html { redirect_to(@user) }
         format.xml  { head :ok }
       else
 	    @title = "Edit user"

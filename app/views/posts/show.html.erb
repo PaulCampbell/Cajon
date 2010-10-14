@@ -8,7 +8,7 @@
 <span class="author"><%= @post.user.name %></span><br/>
 <time><%= @post.created_at %></time>
 <p>
-  <%= @post.content %>
+  <%=raw @post.content %>
 </p>
 </article>
 
