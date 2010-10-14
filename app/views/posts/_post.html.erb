@@ -1,7 +1,7 @@
 <li class="post">
 	<article>
 		<h1><%= link_to post.title, post_path(post) %></h1>
-		<div class="timestamp"><%= time_ago_in_words(post.created_at) %> ago.</div>
+		<time><%= post.created_at %> ago.</time>
 		<div class="postcontent"><%= post.content %></div>
 	</article>
 </li>

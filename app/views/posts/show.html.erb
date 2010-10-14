@@ -6,7 +6,7 @@
 	<% end %>
 <h1><%= @post.title %></h1>
 <span class="author"><%= @post.user.name %></span><br/>
-<span><%= @post.created_at %></span>
+<time><%= @post.created_at %></time>
 <p>
   <%= @post.content %>
 </p>

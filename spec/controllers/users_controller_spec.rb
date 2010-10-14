@@ -211,8 +211,7 @@ describe UsersController do
     describe "failure" do
 
       before(:each) do
-        @attr = { :email => "", :name => "", :password => "",
-                  :password_confirmation => "" }
+        @attr = { :email => "", :name => "" }
       end
 
       it "should render the 'edit' page" do
@@ -229,8 +228,7 @@ describe UsersController do
     describe "success" do
 
       before(:each) do
-        @attr = { :name => "New Name", :email => "user@example.org",
-                  :password => "barbaz", :password_confirmation => "barbaz" }
+        @attr = { :name => "New Name", :email => "user@example.org" }
       end
 
       it "should change the user's attributes" do

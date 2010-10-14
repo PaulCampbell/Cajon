@@ -71,7 +71,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     respond_to do |format|
-      if @user.update_attributes(params[:user])
+      if @user.update_attributes(:name => params[:user][:name], :email => params[:user][:email])
 	    flash[:success] = "Profile updated"
         format.html { redirect_to(@user, :notice => 'User was successfully updated.') }
         format.xml  { head :ok }
@@ -98,7 +98,9 @@ class UsersController < ApplicationController
    
   private
 
-   
+   def correct_user
+     is_correct_user(params[:id])
+   end
 	
 	
 end

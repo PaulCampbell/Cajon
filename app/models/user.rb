@@ -28,9 +28,9 @@ class User < ActiveRecord::Base
 					  :length => {:maximum => 50}
 					   # Automatically create the virtual attribute 'password_confirmation'.
   
-    validates :password, :presence     => true,
-                         :confirmation => true,
-                         :length       => { :within => 6..40 }
+    validates :password, :presence     => { :if => :password_required?},
+                         :confirmation => { :if => :password_required?},
+                         :length       => { :if => :password_required?, :within => 6..40 }
 						 
 	validates :description, :length => { :maximum => 250 }
 						 
@@ -72,5 +72,11 @@ class User < ActiveRecord::Base
 		def secure_hash(string)
 			Digest::SHA2.hexdigest(string)
 		end
-
+		
+    protected
+       def password_required?
+		  self.new_record?
+       end
 end
+
+

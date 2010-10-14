@@ -23,10 +23,10 @@ module SessionsHelper
   end
   
   
-	def correct_user
-      @user = User.find(params[:id])
+  def is_correct_user(user_id)
+      @user = User.find(user_id)
       redirect_to(root_path) unless current_user?(@user)
-    end
+  end
 	
 	def admin_user
 	  if !current_user.nil? 
