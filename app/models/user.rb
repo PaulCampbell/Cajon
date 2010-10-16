@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
 						 
 	validates :description, :length => { :maximum => 250 }
 						 
-	before_save :encrypt_password
+	before_save :encrypt_password  # => { :if => :password_is_updated?}
 	
 	cattr_reader :per_page
     @@per_page = 10
@@ -53,6 +53,8 @@ class User < ActiveRecord::Base
       user = find_by_id(id)
       (user && user.salt == cookie_salt) ? user : nil
     end
+	
+
 	
 	 
 	private 
@@ -77,6 +79,10 @@ class User < ActiveRecord::Base
        def password_required?
 		  self.new_record?
        end
+	   
+	   def password_is_updated?
+		   true
+	   end
 end
 
 

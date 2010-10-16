@@ -6,7 +6,9 @@ Cajon::Application.routes.draw do
   get "pages/about"
 
   resources :posts
-  resources :users
+  resources :users do
+    resources :posts
+  end
   resources :sessions, :only => [:new, :create, :destroy]
 
   match '/signup',  :to => 'users#new'

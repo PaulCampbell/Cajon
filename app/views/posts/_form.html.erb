@@ -18,10 +18,18 @@
     <%= f.label :content %><br />
     <%= f.text_area :content %>
   </div>
- <div class="wmd-preview"></div> 
+  <div class="field">
+	<%= f.check_box  :published %> 
+    <%= f.label  :published %> 
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+ <article>
+	<h2>Post preview</h2>
+ 	<div class="wmd-preview"></div>
+ <article> 
+
 <% end %>
 	<script>wmd_options = { output: "Html" };</script>
 	<script type="text/javascript"  src="/javascripts/wmd/wmd.js"></script> 

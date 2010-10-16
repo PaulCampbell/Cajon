@@ -2,12 +2,12 @@ require 'vendor/reversemarkdown/reverse_markdown'
 
 class PostsController < ApplicationController
   before_filter :authenticate, :only => [:new, :create]
-  before_filter :correct_user, :only => [:edit, :update, :destroy]
+  before_filter :correct_user, :only => [:edit, :update, :destroy, :index]
 
-  # GET /posts
-  # GET /posts.xml
+  # GET users/1/posts
   def index
-    @posts = Post.all
+    @user = User.find(params[:user_id])
+    @posts = @user.posts.paginate(:page => params[:page], :per_page => 20)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,20 +80,24 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.xml
   def destroy
-    @post = Post.find(params[:id])
+	@post = Post.find(params[:id])
     @post.destroy
     flash[:success] = "Post deleted"
     respond_to do |format|
-      format.html { redirect_to(posts_url) }
+      format.html { redirect_to(user_posts_path(@post.user)) }
       format.xml  { head :ok }
     end
   end
   
   private 
 	def correct_user
-	  @post = Post.find(params[:id])
-      @user = @post.user
-      is_correct_user(@user.id)
+	  if params[:user_id].nil?
+		@post = Post.find(params[:id])
+        @user = @post.user
+        is_correct_user(@user.id)
+	  else
+	    is_correct_user(params[:user_id])
+	  end
     end
   
 end
