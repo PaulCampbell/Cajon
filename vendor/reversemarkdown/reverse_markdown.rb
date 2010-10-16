@@ -263,8 +263,6 @@ EOF
 
 r = ReverseMarkdown.new
 
-puts r.parse_string(example)
 
-#r.print_errors
 
 #r.speed_benchmark(example, 100)

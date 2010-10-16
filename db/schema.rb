@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(:version => 20101016191013) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "published"
+    t.boolean  "published",  :default => false
   end
 
   add_index "posts", ["user_id"], :name => "index_posts_on_user_id"

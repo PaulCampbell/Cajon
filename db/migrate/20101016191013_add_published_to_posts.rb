@@ -1,6 +1,6 @@
 class AddPublishedToPosts < ActiveRecord::Migration
   def self.up
-    add_column :posts, :published, :boolean
+    add_column :posts, :published, :boolean, :default => false
   end
 
   def self.down

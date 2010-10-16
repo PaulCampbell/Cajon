@@ -165,14 +165,15 @@ describe PostsController do
         @user = Factory(:user)
         test_sign_in(@user)
 		@post = Factory(:post, :user => @user)
-		@attr = { :title => "New title", :content => "New content" }
+		@attr = { :title => "New title", :content => "New content", :published => 1 }
       end
 	  
 	  it "should update the post" do
-	    put :update, :id => @post, :post => @attr
+	    put :update, :id => @post, :post => @attr 
 		@post.reload
 		@post.title.should == @attr[:title]
 		@post.content.should == @attr[:content]
+		@post.published?.should == true
 	  end
 	  
 	  it "should redirect to the show post page" do

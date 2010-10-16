@@ -22,7 +22,7 @@ namespace :db do
     
     User.all(:limit => 6).each do |user|
       50.times do
-        user.posts.create!(:content => Faker::Lorem.paragraphs(paragraph_count = 4), :title => Faker::Lorem.sentence(5))
+        user.posts.create!(:content => Faker::Lorem.paragraphs(paragraph_count = 4), :title => Faker::Lorem.sentence(5), :published => true)
       end
     end  
   end
