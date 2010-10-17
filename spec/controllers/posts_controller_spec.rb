@@ -24,6 +24,50 @@ describe PostsController do
   
   
   
+  describe "POST 'index'" do
+    
+	describe "for wrong user" do
+	  before(:each) do
+		@user = Factory(:user)
+        wrong_user = Factory(:user, :email => "user@example.net")
+        test_sign_in(wrong_user)
+      end
+
+      it "should deny access" do
+		get :index, :user_id => @user.id 
+	    response.should redirect_to(root_path)
+	  end
+	
+	end
+	
+	describe "for correct user" do
+	  before(:each) do
+        @user = test_sign_in(Factory(:user))
+      end
+	  
+	  it "should be succesful" do
+	    get :index, :user_id => @user.id 
+	    response.should be_success
+	  end
+	
+	end
+	
+	describe "for non-signed-in user" do
+	
+	  before(:each) do
+		@user = Factory(:user)
+	  end
+	  
+	  it "should be unsuccessful" do
+	    get :index, :user_id => @user.id 
+	    response.should redirect_to(root_path)
+	  end
+    end
+	
+  end
+  
+  
+  
   describe "POST 'create'" do
 
     before(:each) do
