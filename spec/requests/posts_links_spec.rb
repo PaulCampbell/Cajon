@@ -15,7 +15,7 @@ describe "PostsLinks" do
   
     it "should have an edit link" do
 	  visit post_path(@post)
-	  response.should have_selector("a", :content => "Edit")
+	  response.should have_selector("a", :title  => "Edit post")
 	end
 	
   end
@@ -35,7 +35,7 @@ describe "PostsLinks" do
 	  
 	  it "should not have an edit link" do
 	    visit post_path(@post)
-		response.should_not have_selector("a", :content => "Edit")
+		response.should_not have_selector("a", :title  => "Edit post")
 	  end
   
   end
@@ -49,7 +49,7 @@ describe "PostsLinks" do
     
 	it "should not have an edit link" do
 	  visit post_path(@post)
-	  response.should_not have_selector("a", :content => "Edit")
+	  response.should_not have_selector("a", :title  => "Edit post")
 	end
   
   end
