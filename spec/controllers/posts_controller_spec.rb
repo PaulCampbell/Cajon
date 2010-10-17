@@ -49,6 +49,17 @@ describe PostsController do
 	    get :index, :user_id => @user.id 
 	    response.should be_success
 	  end
+	  
+	  it "should display all posts" do
+	    post1 = Factory(:post, :user => @user, :content => "The content of post number 1", :title => "Blog post 1", :published => true)
+		post2 = Factory(:post, :user => @user, :content => "The content of post number 2", :title => "Blog post 2", :published => true)
+		post3 = Factory(:post, :user => @user, :content => "The content of post number 3", :title => "Blog post 3", :published => false)
+	    
+		get :index, :user_id => @user.id 
+	    response.should have_selector("a", :content => post1.title)
+		response.should have_selector("a", :content => post2.title)
+		response.should have_selector("a", :content => post3.title)
+	  end
 	
 	end
 	

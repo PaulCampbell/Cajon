@@ -15,16 +15,6 @@ header img {
   background: #fff;
 }
 
-section {
-  margin-top: 1em;
-  font-size: 120%;
-  padding: 20px;
-  background: #fff;
-}
-
-section h1 {
-  font-size: 200%;
-}
 
 /* Links */
 
@@ -166,3 +156,16 @@ input[type=text].title {
 }
 .sign_in_box { }
 .sign_in_box input[type=text], .sign_in_box input[type=password] { width:250px; }
+
+article { padding-bottom:20px; padding-top:20px; border-bottom: dashed 1px #efefef; }
+article h1 { font-size: 200%; margin-bottom:10px;}
+article time { font-weight:bold; }
+section.postcontent { padding-top:10px; }
+
+.editLink {
+  background-image: url(/images/editIcon.png);
+  height:38px;
+  width:34px;
+  display:block;
+  float:right;
+}

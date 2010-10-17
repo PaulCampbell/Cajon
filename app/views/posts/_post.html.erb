@@ -2,11 +2,11 @@
 	<article>
 		<% if !current_user.nil? %>
 	<% if current_user == post.user %>
-		<%= link_to "Edit post", {:controller => "posts", :action => "edit", :id => post } %>
+		<%= link_to "", {:controller => "posts", :action => "edit", :id => post }, :class=> "editLink", :title => "Edit post" %>
 	<% end  %>
 		<% end %>
 		
 		<h1><%= link_to post.title, post_path(post) %></h1>
 		<time><%= format_date(post.created_at) %></time>
-		<div class="postcontent"><%=raw post.content %></div>
+		<section class="postcontent"><%=raw post.content %></section>
 	</article>
