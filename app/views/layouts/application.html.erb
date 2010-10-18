@@ -13,15 +13,13 @@
   </head>
   <div class="container">
       <%= render 'layouts/header'%>
-      <div class="largesection span-15">
+      <div class="span-22">
 		 <% flash.each do |key, value| %>
 	          <div class="flash <%= key %>"><%= value %></div>
 	        <% end %>
         <%= yield %>
       </div>
-	  <div class="smallsection span-7 last">
-		dsf
-	  </div>
+	
 	  <footer class="span-22 last">
 		&copy; Cajon 2010
 		<%= debug(params) if Rails.env.development? %>

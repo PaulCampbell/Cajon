@@ -42,6 +42,8 @@ GEM
     faker (0.3.1)
     gravatar_image_tag (0.1.0)
     i18n (0.4.1)
+    jquery-rails (0.2.4)
+      rails (~> 3.0)
     mail (2.2.6.1)
       activesupport (>= 2.3.6)
       mime-types
@@ -99,6 +101,7 @@ DEPENDENCIES
   factory_girl_rails (= 1.0)
   faker (= 0.3.1)
   gravatar_image_tag (= 0.1.0)
+  jquery-rails
   rails (= 3.0.0)
   rspec (= 2.0.0.rc)
   rspec-rails (= 2.0.0.rc)

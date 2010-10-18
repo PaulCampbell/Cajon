@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101016191013) do
+ActiveRecord::Schema.define(:version => 20101018163903) do
 
   create_table "posts", :force => true do |t|
     t.text     "content"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20101016191013) do
     t.string   "salt"
     t.boolean  "admin",              :default => false
     t.text     "description"
+    t.string   "twitter_name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -63,7 +63,7 @@ class UsersController < ApplicationController
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
     end
-  end
+  end 
 
   # PUT /users/1
   # PUT /users/1.xml
@@ -71,7 +71,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     respond_to do |format|
-      if @user.update_attributes(:name => params[:user][:name], :email => params[:user][:email], :description => params[:user][:description])
+      if @user.update_attributes(params[:user])
 	    flash[:success] = "Profile updated"
         format.html { redirect_to(@user) }
         format.xml  { head :ok }
