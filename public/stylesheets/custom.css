@@ -8,7 +8,7 @@ header  h1 { height:125px ; width:260px; float:left; background-image: url(../..
 header h1 span { position:relative; left:-3000px; }
 .impactSection { background-image: url(../../images/impactBackdrop.png); background-position:bottom; background-color: #f8fefe; border-bottom:solid 1px #b5d3d3; }
 .impactSection h1 {  font-weight:600}
-.impactSection  h2 { color:#111;  letter-spacing:0px; line-height:22px; font-size:175%}
+.impactSection  h2 { color:#111;  letter-spacing:0px; line-height:23px; font-size:175%}
 
 header nav ul {list-style:none; float:right; position:relative; top:5px; left:10px; }
 header nav ul li { list-style:none; float:left; padding-left: 50px; padding-right:20px; } 
@@ -90,7 +90,14 @@ h2 { color: #5b8614; }
 }
 
 
-.gravatar { border:solid 1px #dedede; }
+ul.users { margin:0; padding:0;}
+.users li {
+  list-style: none;
+  margin:0; padding:0 0 10px 0; 
+}
+.gravatar { border:solid 1px #dedede; float:left; margin-right:4px; margin-bottom:4px; }
+.deletelink { float:right; }
+a.usertitle { text-decoration:none; font-weight:bold }
 
 input[type=text], textarea {width:100%}
 input[type=text].title { 
@@ -116,43 +123,31 @@ section.postcontent { padding-top:10px; }
 
 
 
-.field_with_errors {
-  margin-top: 10px;
-  padding: 2px;
-  background-color: red;
-  display: table;
+.field_with_errors input {
+  border:solid 1px red;
 }
 
 .field_with_errors label {
-  color: #fff;
+
 }
 
 #error_explanation {
-  width: 400px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+
 }
 
 #error_explanation h2 {
-  text-align: left;
   font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  background-color: #c00;
-  color: #fff;
+  color: #c00;
+  display:none;
 }
 
 #error_explanation p {
   color: #333;
   margin-bottom: 0;
-  padding: 5px;
 }
 
 #error_explanation ul li {
   font-size: 12px;
-  list-style: square;
+  color: #c00;
+
 }

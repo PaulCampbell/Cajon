@@ -1,14 +1,17 @@
 <section class="container paddingbottom standardpadding">
 
-<div>
-	
+<div class="largeSection span-15">
+	<% unless @posts.empty? %>	
+
+		<%= render @posts %>
+<%= will_paginate @posts %>
+	<% end %>
 </div>
 
 <aside class="span-9 last">
 <h1>Blog roll</h1>
 
-<%= will_paginate %>
-<ul class="users">
+<ul class="users clear">
   <% @users.each do |user| %>
     <%= render user %>
   <% end %>
