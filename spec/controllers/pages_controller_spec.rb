@@ -5,7 +5,7 @@ describe PagesController do
   render_views
 
   before(:each) do
-	@base_title = "Cajon Blog Engine"
+	@base_title = "Decorated World"
     
   end
 
