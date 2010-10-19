@@ -1,7 +1,7 @@
 module ApplicationHelper
 	# Return a title for a page
 	def title 
-		base_title = "Cajon Blog Engine"
+		base_title = "Decorated World"
 		if @title.nil?
 				base_title
 			else

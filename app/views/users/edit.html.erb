@@ -1,23 +1,23 @@
 <section class="container paddingbottom standardpadding">
+<div class="span-15">
 <h1>Edit profile</h1>
-
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :twitter_name %><br />
+    <%= f.label :twitter_name %>
     <%= f.text_field :twitter_name %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description, :rows => 10 %>
+    <%= f.label :description %>
+    <%= f.text_area :description, :rows => 6 %>
   </div>
   
   <div class="actions">
@@ -26,11 +26,12 @@
 <% end %>
 
 <div>
-  <%= gravatar_for @user %>
+  <%= gravatar_for @user, :size => 50 %>
   <a href="http://gravatar.com/emails">change</a>
 </div>
-
-<div>
- <%= link_to("View posts", user_posts_path(@user)) %> | <%= link_to("Add post", new_post_path)%>
 </div>
+<aside class="span-9 last">
+	<%= link_to("Manage posts", user_posts_path(@user)) %> | <%= link_to("Add post", new_post_path)%>
+</aside>
+
 </section>

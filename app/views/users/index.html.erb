@@ -4,7 +4,7 @@
 	<% unless @posts.empty? %>	
 
 		<%= render @posts %>
-<%= will_paginate @posts %>
+<%= will_paginate @posts, :param_name => 'posts_page' %>
 	<% end %>
 </div>
 
@@ -16,6 +16,6 @@
     <%= render user %>
   <% end %>
 </ul>
-<%= will_paginate %>
+<%= will_paginate @users, :param_name => 'users_page' %>
 <aside>
 </section>
