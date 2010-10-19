@@ -1,11 +1,7 @@
+<div class="container paddingbottom">
 <p id="notice"><%= notice %></p>
 <section class="largeSection span-15">
-<h1>
-<%= gravatar_for @user, :size => 30 %>
-<%= @user.name %></h1>
-<p>
-	<%= @user.description %>
-</p>
+
 <% unless @user.posts.empty? %>	
 
 	<%= render @posts %>
@@ -14,7 +10,14 @@
 <% end %>
 </section>
 
-<aside class="span-7 last">
+<aside class="span-9 last">
+	<h1>
+	<%= gravatar_for @user, :size => 30 %>
+	<%= @user.name %></h1>
+	<p>
+		<%= @user.description %>
+	</p>
+	
 	<% if !@user.twitter_name.nil? %>
 		<div id="twitter">
 		
@@ -38,4 +41,4 @@
 				});
 			</script>
 
-
+</div>

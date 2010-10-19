@@ -16,7 +16,7 @@ Cajon::Application.routes.draw do
   match '/signout', :to => 'sessions#destroy'
   
   match '/contact', :to => 'pages#contact'
-  match '/about',   :to => 'pages#about'
+  match '/services',   :to => 'pages#services'
   
   
   

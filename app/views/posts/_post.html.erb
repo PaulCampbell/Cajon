@@ -8,5 +8,5 @@
 		
 		<h1><%= link_to post.title, post_path(post) %></h1>
 		<time><%= format_date(post.created_at) %></time>
-		<section class="postcontent"><%=raw post.content %></section>
+		<div class="postcontent"><%=raw post.content %></div>
 	</article>

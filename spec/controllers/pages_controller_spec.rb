@@ -35,16 +35,16 @@ describe PagesController do
     end
   end
 
-  describe "GET 'about'" do
+  describe "GET 'services'" do
     it "should be successful" do
-      get 'about'
+      get 'services'
       response.should be_success
     end
 
     it "should have the right title" do
-      get 'about'
+      get 'services'
       response.should have_selector("title",
-                                    :content => @base_title + " | About")
+                                    :content => @base_title + " | Services")
     end
   end
 end
