@@ -1,7 +1,12 @@
+a:hover { color:#587427 ; }
+
 .half { width:49%; float:left;}
+.a_third { width:33%; float:left;  }
+.center { text-align:center; }
+.right { text-align:right; } 
 .rightSpace { padding-right:15px; }
 .leftSpace { padding-left:5px;}
-footer { height:165px; background-color:#d6d6d6; border-top:1px solid #a4a4a4; }
+footer { background-color:#d6d6d6; border-top:1px solid #a4a4a4; padding:20px 0 20px 0; clear:both;}
 
 header { background-color:#131313; height:148px; }
 header  h1 { height:125px ; width:260px; float:left; background-image: url(../../images/logoTop.png); position:relative; top:15px;  }
@@ -23,6 +28,9 @@ h2 { color: #5b8614; }
 .profilelinks { list-style:none; float:right; margin-top:5px; }
 .profilelinks li { float:left; margin-right:10px; margin-left:10px; }
 .profilelinks li a { color:white; text-decoration:none; }
+
+
+.butGetInTouch { height: 31px ; width: 279px ; background-image: url(/images/butGetInTouch.png); color:white; text-align:center; display:block; text-decoration:none; font-size: 150%; padding-top:3px;}
 
 
 

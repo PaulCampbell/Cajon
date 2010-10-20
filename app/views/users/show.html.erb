@@ -11,34 +11,6 @@
 </section>
 
 <aside class="span-9 last">
-	<h1>
-	<%= gravatar_for @user, :size => 40 %>
-	<%= @user.name %></h1>
-	<p>
-		<%= @user.description %>
-	</p>
-	
-	<% if !@user.twitter_name.nil? %>
-		<div id="twitter">
-		
-		</div>
-	<% end %>
+	<%= render :partial => "aside", :locals => { :user => @user } %>
 <aside>
-	<script src="/javascripts/jquery.twitter.js" type="text/javascript"></script>
-	<script type="text/javascript"> 
-				$(document).ready(function() {
-					$("#twitter").getTwitter({
-						userName: "slarty_bartfast",
-						numTweets: 5,
-						loaderText: "Loading tweets...",
-						slideIn: true,
-						slideDuration: 750,
-						showHeading: true,
-						headingText: "Latest Tweets",
-						showProfileLink: true,
-						showTimestamp: true
-					});
-				});
-			</script>
-
 </div>

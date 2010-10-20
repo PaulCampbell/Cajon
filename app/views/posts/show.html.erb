@@ -1,3 +1,9 @@
-<section class="container paddingbottom standardpadding">
+<div class="container paddingbottom standardpadding">
+<section class="span-15">
 <%= render @post %>
 </section>
+
+<aside class="span-9 last">
+	<%= render :partial => "users/aside", :locals => { :user => @post.user } %>
+<aside>
+</div>
