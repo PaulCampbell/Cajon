@@ -32,6 +32,7 @@ h2 { color: #5b8614; }
 
 .butGetInTouch { height: 31px ; width: 279px ; background-image: url(/images/butGetInTouch.png); color:white; text-align:center; display:block; text-decoration:none; font-size: 150%; padding-top:3px;}
 
+.butGetInTouch:hover { color:#F3F3F3 }
 
 
 .twitted {
@@ -115,11 +116,15 @@ input[type=text].title {
 .sign_in_box input[type=text], .sign_in_box input[type=password] { width:250px; }
 
 article { padding-bottom:20px;  border-bottom: dashed 1px #efefef; margin-bottom:10px; }
-article h1 { font-size: 200%; margin-bottom:5px;}
+article h1 { font-size: 200%; margin-bottom:5px; font-weight:bolder; display:inline; padding-right:5px;}
 article h1 a { text-decoration:none; color:#5b8614; }
-article time { font-weight:bold; padding-bottom:10px; display:block }
+article time {  padding-bottom:10px; color:#DDD; font-size:200%;}
 section.postcontent { padding-top:10px; }
-
+.postuser{ font-size:200%; font-weight:bold; color:#76a4ec}
+.nobreak { white-space: nowrap; }
+.commentsummary { background-image:url(/images/commenticon.png) ; background-postition:left ; height:27px; background-repeat:no-repeat;  padding-left:30px;  padding-top:2px; color:#AAA}
+.commentsummary a { color:#76a4ec }
+.commentsummary a:hover { color: #587bb3;}
 
 .editLink {
   background-image: url(/images/editIcon.png);

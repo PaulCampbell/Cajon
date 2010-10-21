@@ -14,7 +14,7 @@ module ApplicationHelper
         ampm = date.strftime("%p").downcase
         new_date = date.strftime("%B %d, %Y at %I:%M" + ampm)
     else
-        new_date = date.strftime("%B %d, %Y")
+        new_date = date.strftime("%b %d")
     end
 end
 

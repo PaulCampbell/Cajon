@@ -7,6 +7,7 @@
 		<% end %>
 		
 		<h1><%= link_to post.title, post_path(post) %></h1>
-		<time><%= format_date(post.created_at) %></time>
+		<span class="nobreak"><span class="postuser"><%= post.user.name %></span> <time><%= format_date(post.created_at) %></time></span>
+		<div class="commentsummary"><a href="#">2 comments</a> <span>latest by William</span></div>
 		<div class="postcontent"><%=raw post.content %></div>
 	</article>
