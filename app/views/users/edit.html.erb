@@ -31,7 +31,8 @@
 </div>
 </div>
 <aside class="span-9 last">
-	<%= link_to("Manage posts", user_posts_path(@user)) %> | <%= link_to("Add post", new_post_path)%>
+	<%= link_to("Add post", new_post_path, :class => "addpostlink biglink")%>
+	<%= link_to("Manage posts", user_posts_path(@user), :class => "managepostlink biglink") %>
 </aside>
 
 </section>

@@ -15,6 +15,7 @@ header h1 span { position:relative; left:-3000px; }
 .impactSection h1 {  font-weight:600}
 .impactSection  h2 { color:#111;  letter-spacing:0px; line-height:23px; font-size:175%}
 
+
 header nav ul {list-style:none; float:right; position:relative; top:5px; left:10px; }
 header nav ul li { list-style:none; float:left; padding-left: 50px; padding-right:20px; } 
 header nav ul li  a{ color:white; font-weight:bold; text-decoration:none; font-size:200% }
@@ -29,37 +30,41 @@ h2 { color: #5b8614; }
 .profilelinks li { float:left; margin-right:10px; margin-left:10px; }
 .profilelinks li a { color:white; text-decoration:none; }
 
+.managepostlink { display:block; }
+
+.biglink { display:block;  color:#3A3A3A; font-weight:bold; padding-left:70px; padding-top:7px; padding-bottom:8px; text-decoration:none; font-size:200%; }
+.addpostlink { background-image: url(/images/addpostlink.png); margin-bottom:20px;}
+.managepostlink { background-image: url(/images/managepostlink.png);}
 
 .butGetInTouch { height: 31px ; width: 279px ; background-image: url(/images/butGetInTouch.png); color:white; text-align:center; display:block; text-decoration:none; font-size: 150%; padding-top:3px;}
 
-.butGetInTouch:hover { color:#F3F3F3 }
+.butGetInTouch:hover { color:#F3F3F3;  }
 
 
 .twitted {
 	width: 100%;
 	margin-bottom: 1.5em;
-	border: 1px solid #888;
 }
 
 .twitted h2 {
-	margin: 0;
-	padding: 0.3em 0.8em;
-	font-size: 1em;
-	color: #fff;
-	background-color: #888;
+font-weight:bold; padding-left:70px; padding-top:8px; padding-bottom:8px; text-decoration:none; font-size:200%;
+	color: #3A3A3A; margin-bottom:0;
+	background-image:url(/images/twitterheader.png); z-index:10;
 }
 
 .twitted p.preLoader {
-	margin: 0;
-	padding: 1em 1em 1em 3em;
+	margin: 0;	padding: 1em 1em 1em 3em;
 	background: transparent url("loader.gif") 1em center no-repeat;
 	/* generate your own loader gif: http://www.ajaxload.info */
 }
 
 .twitted ul#twitter_update_list {
+
 	margin: 0;
+    margin-right:3px;
 	padding: 0 0.8em;
 	list-style-type: none;
+    background-color:#f7f7f7;
 }
 
 .twitted ul#twitter_update_list li {
@@ -75,12 +80,13 @@ h2 { color: #5b8614; }
 
 .twitted ul#twitter_update_list li span a {
 	/* links in tweet content */
-	color: #00f;
+	color:#76a4ec;;
 }
+.twitted ul#twitter_update_list li span a:hover { color:#587bb3 }
 
 .twitted ul#twitter_update_list li a {
 	/* timestamp link */
-	color: #f00;
+	color:#5b8614;
 }
 
 .twitted ul#twitter_update_list li.firstTweet {
@@ -91,13 +97,12 @@ h2 { color: #5b8614; }
 }
 
 .twitted p.profileLink {
-	display: block;
-	margin: 0;
-	padding: 0.3em 1em;
-	color: #fff;
-	background-color: #ddd;
+font-weight:bold; padding-left:25px; padding-top:16px; padding-bottom:15px; text-decoration:none; font-size:120%;
+    margin-bottom:0;
+	background-image:url(/images/twitterfooter.png); z-index:10;
 }
-
+.twitted p.profileLink a { text-decoration:none; color:#76a4ec; }
+.twitted p.profileLink a:hover { color:#587bb3 }
 
 ul.users { margin:0; padding:0;}
 .users li {
@@ -106,7 +111,8 @@ ul.users { margin:0; padding:0;}
 }
 .gravatar { border:solid 1px #dedede; float:left; margin-right:4px; margin-bottom:4px; }
 .deletelink { float:right; }
-a.usertitle { text-decoration:none; font-weight:bold }
+a.usertitle { text-decoration:none; font-weight:bold; color:#76a4ec; font-size:110% }
+a.usertitle:hover { color: #587bb3;}
 
 input[type=text], textarea {width:100%}
 input[type=text].title { 
@@ -115,12 +121,12 @@ input[type=text].title {
 .sign_in_box { }
 .sign_in_box input[type=text], .sign_in_box input[type=password] { width:250px; }
 
-article { padding-bottom:20px;  border-bottom: dashed 1px #efefef; margin-bottom:10px; }
+article { padding-bottom:20px;  border-bottom: dashed 1px #efefef; margin-bottom:10px; padding-right:5px; }
 article h1 { font-size: 200%; margin-bottom:5px; font-weight:bolder; display:inline; padding-right:5px;}
 article h1 a { text-decoration:none; color:#5b8614; }
 article time {  padding-bottom:10px; color:#DDD; font-size:200%;}
 section.postcontent { padding-top:10px; }
-.postuser{ font-size:200%; font-weight:bold; color:#76a4ec}
+.postuser{ font-size:200%; font-weight:bold; color:#76a4ec; padding-right:5px;}
 .nobreak { white-space: nowrap; }
 .commentsummary { background-image:url(/images/commenticon.png) ; background-postition:left ; height:27px; background-repeat:no-repeat;  padding-left:30px;  padding-top:2px; color:#AAA}
 .commentsummary a { color:#76a4ec }
