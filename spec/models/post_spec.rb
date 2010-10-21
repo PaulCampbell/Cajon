@@ -15,7 +15,7 @@ describe Post do
   end
   
   describe "user associations" do
-    
+     
     before(:each) do
       @post = @user.posts.create(@attr)
     end
@@ -53,6 +53,32 @@ describe Post do
       @user.posts.build(:title => "a" * 201).should_not be_valid
     end
 	
+  end
+  
+  
+  describe "comment associations" do
+  
+	before(:each) do
+	  @post =  @user.posts.create!(@attr)
+	  @postcomment1 = Factory(:postcomment, :post => @post, :created_at => 1.days.ago)
+	  @postcomment2 = Factory(:postcomment, :post => @post, :created_at => 2.days.ago)
+	end
+	
+	it "should have a postcomments attribute" do
+	  @post.should respond_to(:postcomments)
+	end
+	
+	it "should have the right postcomments in ascending date order" do
+	  @post.postcomments.should == [@postcomment2, @postcomment1]
+	end
+	
+	it "should destroy the post's postcomments" do
+	  @post.destroy
+	  [@postcomment1, @postcomment2].each do |postcomment|
+	    Postcomment.find_by_id(postcomment.id).should be_nil
+	  end
+	end
+  
   end
 
 end

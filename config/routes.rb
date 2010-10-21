@@ -4,8 +4,13 @@ Cajon::Application.routes.draw do
   get "pages/home"
   get "pages/contact"
   get "pages/about"
+  
+  resources :postcomments, :only => [:create]
 
-  resources :posts
+  resources :posts do
+	resources :postcomments
+  end
+  
   resources :users do
     resources :posts
   end

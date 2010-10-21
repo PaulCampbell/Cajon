@@ -15,3 +15,12 @@ Factory.define :post do |post|
   post.content "My post content"
   post.association :user
 end
+
+Factory.define :postcomment do |comment|
+  comment.website "http://www.decoratedworld.com"
+  comment.name "Paul"
+  comment.content "My comment content"
+  comment.approved true
+  comment.association :post
+  comment.email "paulgcampbell@gmail.com"
+end
