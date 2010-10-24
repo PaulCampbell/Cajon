@@ -1,13 +1,23 @@
-<section class="comment" id="comment_<%= postcomment.id %>">
+<% if postcomment.approved? %>
+<section class="comment" id="comment_<%= postcomment.id %>">	
+	<% if !current_user.nil? %>
+	<% if current_user == postcomment.post.user %>
+	<span style="float:right">
+		<%= link_to "Spam", { :controller => "postcomments", :action => "removeapproval", :id => postcomment.id },:confirm => "Are you sure you want to remove this comment?"  %>
+	</span>
+	<% end %>
+	<% end %>
+	
 	<h1><cite>
 		<% if postcomment.website.nil? or postcomment.website == "" %>
-		<%= postcomment.name %>
+		<%= postcomment.friendly_name %>
 		<% else %>
-		<%= link_to postcomment.name, postcomment.website %>
+		<%= link_to postcomment.friendly_name, postcomment.website %>
 		<% end%>
 	</cite>
 	said on <%= link_to format_date_long(postcomment.created_at), "#comment_" + postcomment.id.to_s %> </h1>
 	<div>
-		<%= postcomment.content%>
+		<%=simple_format h (postcomment.content) %>
 	</div>
 </section>
+<% end %>

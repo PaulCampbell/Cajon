@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   def show
 	
     @post = Post.find(params[:id])
-	
+	@title = @post.title
 	@postcomment = @post.postcomments.new
 
     respond_to do |format|
@@ -95,6 +95,15 @@ class PostsController < ApplicationController
       format.html { redirect_to(user_posts_path(@post.user)) }
       format.xml  { head :ok }
     end
+  end
+  
+  def publish
+	@post = Post.find(params[:id])
+	@post.published = true
+	@post.save
+	
+	redirect_to(user_posts_path @post.user, :status => "Post published")
+	
   end
   
   private 

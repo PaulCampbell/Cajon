@@ -9,7 +9,7 @@
 		<h1><%= link_to post.title, post_path(post) %></h1>
 		<span class="nobreak"><span class="postuser"><%= post.user.name %></span> <time><%= format_date_short(post.created_at) %></time></span>
 		<div class="commentsummary">
-			<%= link_to post.postcomments.length.to_s + " comments",  post_path(post) + "#comments"%> <% if post.postcomments.any?%><span>latest by <%= post.postcomments.last.name %></span><% end %>
+			<%= link_to post.postcomments.where(:approved => true).length.to_s + " comments",  post_path(post) + "#comments"%> <% if post.postcomments.any? and post.postcomments.where(:approved => true).length > 0 %><span>latest by <%= post.postcomments.last.name %></span><% end %>
 		</div>
 		<div class="postcontent"><%=raw post.content %></div>
 	</article>

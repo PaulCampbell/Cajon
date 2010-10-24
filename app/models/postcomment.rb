@@ -22,13 +22,26 @@ class Postcomment < ActiveRecord::Base
 	default_scope :order => 'postcomments.created_at ASC'
 	validates :content, :presence => true, :length => { :maximum => 500 }
 	
+	before_save :format_comment
+	
+	def after_initialize 
+      return unless new_record?
+      self.approved = true
+    end
+	
 	def friendly_name
-		if name == "" 
+		if name == "" or name.nil?
 			"Anonymous"
 		else
 			 name
 		end
 	end
+	
+	
+	private
+		def format_comment
+		   self.content.gsub(/\n/, "<br/>")
+		end
 
 
 end

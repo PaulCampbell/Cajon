@@ -13,7 +13,7 @@
 	<td>
 	<% if !post.published? %>
 
-	  <%= link_to 'Publish'%>
+	  <%= link_to 'Publish', { :controller => "posts", :action => "publish", :id => post.id }%>
 	<% end %>
 
 	</td>
