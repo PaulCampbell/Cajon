@@ -2,9 +2,12 @@
 <section class="span-15 padright">
 <%= render @post %>
 
-<section>
+<section id="comments">
+	<% if @post.postcomments.any?%>
 <h2>Comments</h2>
 <%= render  @post.postcomments %>
+	<% end %>
+<h3>Say something!</h3>
 
 <%= form_for @postcomment  do |f| %>
   <% if @postcomment.errors.any? %>
