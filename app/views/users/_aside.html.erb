@@ -2,7 +2,7 @@
 <%= gravatar_for user, :size => 40 %>
 <%= user.name %></h1>
 <p>
-	<%= user.description %>
+	<%= simple_format user.description %>
 </p>
 
 <% if !user.twitter_name.nil? %>

@@ -5,7 +5,8 @@ describe Postcomment do
     @attr = { :website => "http://www.decoratedworld.com",
   :name => "Paul",
   :content => "My comment content",
-  :approved => true}
+  :approved => true,
+  :website => "www.google.com"}
   end
 
   it "should create a new instance given valid attributes" do
@@ -31,6 +32,25 @@ describe Postcomment do
   it "should return name if name is not empty" do
 	no_name_comment = Postcomment.new(@attr)
 	no_name_comment.friendly_name.should == "Paul"
+  end
+  
+  it "should make website links without leading http valid" do
+    comment_with_website_without_http_at_start = Postcomment.new(@attr)
+	comment_with_website_without_http_at_start.save
+	comment_with_website_without_http_at_start.website.should == "http://www.google.com"
+	
+  end
+  
+  it "should leave valid web addresses as they are" do
+    comment_with_website_with_http_at_start = Postcomment.new(@attr.merge(:website => "http://www.google.com"))
+	comment_with_website_with_http_at_start.save
+	comment_with_website_with_http_at_start.website.should == "http://www.google.com"
+  end
+  
+    it "should leave valid SSL web addresses as they are" do
+    comment_with_website_with_https_at_start = Postcomment.new(@attr.merge(:website => "https://www.google.com"))
+	comment_with_website_with_https_at_start.save
+	comment_with_website_with_https_at_start.website.should == "https://www.google.com"
   end
   
   

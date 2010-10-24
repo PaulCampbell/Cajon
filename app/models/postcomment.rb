@@ -22,7 +22,7 @@ class Postcomment < ActiveRecord::Base
 	default_scope :order => 'postcomments.created_at ASC'
 	validates :content, :presence => true, :length => { :maximum => 500 }
 	
-	before_save :format_comment
+	before_save :format_comment, :clean_url
 	
 	def after_initialize 
       return unless new_record?
@@ -41,6 +41,14 @@ class Postcomment < ActiveRecord::Base
 	private
 		def format_comment
 		   self.content.gsub(/\n/, "<br/>")
+		end
+		
+		def clean_url
+			unless self.website =~ /https?:\/\/.*/
+				write_attribute :website, "http://" + self.website.to_s
+			else
+				write_attribute :website, self.website
+			end
 		end
 
 
