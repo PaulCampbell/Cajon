@@ -1,0 +1,13 @@
+<section class="comment" id="comment_<%= postcomment.id %>">
+	<h1><cite>
+		<% if postcomment.website.nil? or postcomment.website == "" %>
+		<%= postcomment.name %>
+		<% else %>
+		<%= link_to postcomment.name, postcomment.website %>
+		<% end%>
+	</cite>
+	said on <%= link_to format_date_long(postcomment.created_at), "#comment_" + postcomment.id.to_s %> </h1>
+	<div>
+		<%= postcomment.content%>
+	</div>
+</section>

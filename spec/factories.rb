@@ -22,5 +22,4 @@ Factory.define :postcomment do |comment|
   comment.content "My comment content"
   comment.approved true
   comment.association :post
-  comment.email "paulgcampbell@gmail.com"
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101021184733) do
+ActiveRecord::Schema.define(:version => 20101024190333) do
 
   create_table "comments", :force => true do |t|
     t.text     "content"
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(:version => 20101021184733) do
     t.text     "content"
     t.integer  "post_id"
     t.string   "name"
-    t.string   "email"
     t.string   "website"
     t.boolean  "approved"
     t.datetime "created_at"

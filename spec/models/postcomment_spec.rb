@@ -5,8 +5,7 @@ describe Postcomment do
     @attr = { :website => "http://www.decoratedworld.com",
   :name => "Paul",
   :content => "My comment content",
-  :approved => true,
-  :email => "paulgcampbell@gmail.com" }
+  :approved => true}
   end
 
   it "should create a new instance given valid attributes" do
@@ -26,7 +25,7 @@ describe Postcomment do
   
   it "should return friendly value if name is empty" do
 	no_name_comment = Postcomment.new(@attr.merge(:name => ""))
-	no_name_comment.friendly_name.should == "anonymous"
+	no_name_comment.friendly_name.should == "Anonymous"
   end
   
   it "should return name if name is not empty" do
@@ -34,21 +33,6 @@ describe Postcomment do
 	no_name_comment.friendly_name.should == "Paul"
   end
   
-  it "should accept valid email addresses" do
-    addresses = %w[user@foo.com THE_USER@foo.bar.org first.last@foo.jp]
-    addresses.each do |address|
-      valid_email_postcomment = Postcomment.new(@attr.merge(:email => address))
-      valid_email_postcomment.should be_valid
-    end
-  end
-
-  it "should reject invalid email addresses" do
-    addresses = %w[user@foo,com user_at_foo.org example.user@foo.]
-    addresses.each do |address|
-      invalid_email_postcomment = Postcomment.new(@attr.merge(:email => address))
-      invalid_email_postcomment.should_not be_valid
-    end
-  end
   
   
   describe "post associations" do

@@ -7,7 +7,7 @@
 		<% end %>
 		
 		<h1><%= link_to post.title, post_path(post) %></h1>
-		<span class="nobreak"><span class="postuser"><%= post.user.name %></span> <time><%= format_date(post.created_at) %></time></span>
+		<span class="nobreak"><span class="postuser"><%= post.user.name %></span> <time><%= format_date_short(post.created_at) %></time></span>
 		<div class="commentsummary">
 			<%= link_to "2 comments",  post_path(post) %> <span>latest by William</span>
 		</div>

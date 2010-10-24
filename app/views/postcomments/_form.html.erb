@@ -1,11 +1,3 @@
-<div class="container paddingbottom standardpadding">
-<section class="span-15 padright">
-<%= render @post %>
-
-<section>
-<h2>Comments</h2>
-<%= render  @post.postcomments %>
-
 <%= form_for @postcomment  do |f| %>
   <% if @postcomment.errors.any? %>
     <div id="error_explanation">
@@ -27,6 +19,10 @@
     <%= f.text_field :website %>
   </div>
   <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
     <%= f.label :content, "Comment" %>
     <%= f.text_area :content %>
   </div>
@@ -36,12 +32,3 @@
 <%= hidden_field_tag 'post_id', @postcomment.post.id %>
 
 <% end %>
-
-
-</section>
-</section>
-
-<aside class="span-9 last">
-	<%= render :partial => "users/aside", :locals => { :user => @post.user } %>
-<aside>
-</div>

@@ -9,7 +9,7 @@ class PostcommentsController < ApplicationController
 		if @postcomment.save
 			redirect_to(@post, :notice => 'Comment added.')
 		else
-			redirect_to(@post)
+			render  "posts/show" 
 		end
 		
 	end
