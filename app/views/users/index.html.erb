@@ -1,11 +1,13 @@
 <section class="container paddingbottom standardpadding">
 
 <div class="largeSection span-15">
+		<div class="columnSpacer">
 	<% unless @posts.empty? %>	
 
 		<%= render @posts %>
 <%= will_paginate @posts, :param_name => 'posts_page' %>
 	<% end %>
+	</div>
 </div>
 
 <aside class="span-9 last">

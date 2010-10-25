@@ -1,5 +1,6 @@
 <section class="container paddingbottom standardpadding">
 <div class="span-15">
+		<div class="columnSpacer">
 <h1>Edit profile</h1>
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
@@ -25,9 +26,10 @@
   </div>
 <% end %>
 
-<div>
+<div class="standardpadding">
   <%= gravatar_for @user, :size => 50 %>
   <a href="http://gravatar.com/emails">change</a>
+</div>
 </div>
 </div>
 <aside class="span-9 last">

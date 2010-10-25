@@ -1,13 +1,16 @@
 <div class="container paddingbottom">
+	
 <p id="notice"><%= notice %></p>
 <section class="largeSection span-15">
-
+	<div class="columnSpacer">
+		
 <% unless @user.posts.empty? %>	
 
 	<%= render @posts %>
 
 <%= will_paginate @posts %>
 <% end %>
+</div>
 </section>
 
 <aside class="span-9 last">
