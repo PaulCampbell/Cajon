@@ -9,13 +9,17 @@ a:hover { color:#587427 ; }
 .right { text-align:right; } 
 .rightSpace { padding-right:15px; }
 .leftSpace { padding-left:5px;}
-footer { background-color:#d6d6d6; border-top:1px solid #a4a4a4; padding:20px 0 20px 0; clear:both;}
+footer { background-color:#d6d6d6; background-image: url(/images/footerbg.gif); ; border-top:1px solid #a4a4a4; padding:20px 0 20px 0; clear:both;}
+
+h1 {font-size:260%;
+	color: #3A3A3A; font-weight:bold; }
 
 header { background-color:#131313; height:148px; }
-header  h1 { height:125px ; width:260px; float:left; background-image: url(../../images/logoTop.png); position:relative; top:15px;  }
+header  h1 { height:125px ; width:260px; float:left; background-image: url(../../images/logoTop.png); position:relative; top:15px; color:black;  }
 header h1 span { position:relative; left:-3000px; }
 .impactSection { background-image: url(../../images/impactBackdrop.png); background-position:bottom; background-color: #f8fefe; border-bottom:solid 1px #b5d3d3; }
-.impactSection h1 {  font-weight:600}
+
+.impactSection h1 {  font-weight:600; color:black;}
 .impactSection  h2 { color:#111;  letter-spacing:0px; line-height:23px; font-size:175%}
 
 
@@ -143,8 +147,7 @@ section.postcontent { padding-top:10px; }
 .comment { margin-bottom:20px; background-color:#f7f7f7; padding: 10px; border-top: 3px solid #d1d1d1; }
 
 
-aside h1 {font-size:260%;
-	color: #3A3A3A; font-weight:bold; }
+
     
 h3 { color: #76A4EC; font-weight:bold;}
 
