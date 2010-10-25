@@ -26,5 +26,9 @@ module ApplicationHelper
 		end
 	end
 	
+	def format_iso_date(date)
+		iso_date = date.strftime("%Y-%m-%d")
+	end
+	
 
 end

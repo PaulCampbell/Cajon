@@ -16,13 +16,16 @@
 class Postcomment < ActiveRecord::Base
 	belongs_to :post
 	
+	#url_regex = \b(([\w-]+://?|www[.])[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/)))
 	
 	attr_accessible :content, :name, :email, :website
 	
 	default_scope :order => 'postcomments.created_at ASC'
 	validates :content, :presence => true, :length => { :maximum => 500 }
 	
-	before_save :format_comment, :clean_url
+	#validates :website, :format => {:with => url_regex}
+	
+	before_save  :clean_url
 	
 	def after_initialize 
       return unless new_record?
@@ -37,18 +40,17 @@ class Postcomment < ActiveRecord::Base
 		end
 	end
 	
-	
+	 
 	private
-		def format_comment
-		   self.content.gsub(/\n/, "<br/>")
-		end
 		
 		def clean_url
+		  unless self.website.nil? or self.website == "" 
 			unless self.website =~ /https?:\/\/.*/
 				write_attribute :website, "http://" + self.website.to_s
 			else
 				write_attribute :website, self.website
 			end
+		  end
 		end
 
 

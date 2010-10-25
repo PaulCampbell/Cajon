@@ -47,10 +47,16 @@ describe Postcomment do
 	comment_with_website_with_http_at_start.website.should == "http://www.google.com"
   end
   
-    it "should leave valid SSL web addresses as they are" do
+  it "should leave valid SSL web addresses as they are" do
     comment_with_website_with_https_at_start = Postcomment.new(@attr.merge(:website => "https://www.google.com"))
 	comment_with_website_with_https_at_start.save
 	comment_with_website_with_https_at_start.website.should == "https://www.google.com"
+  end
+  
+  it "blank web addresses should stay as they are" do
+    comment_with_website_with_https_at_start = Postcomment.new(@attr.merge(:website => ""))
+	comment_with_website_with_https_at_start.save
+	comment_with_website_with_https_at_start.website.should == ""
   end
   
   

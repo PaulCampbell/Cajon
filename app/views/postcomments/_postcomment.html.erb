@@ -17,7 +17,7 @@
 	</cite>
 	said on <%= link_to format_date_long(postcomment.created_at), "#comment_" + postcomment.id.to_s %> </h1>
 	<div>
-		<%=simple_format h (postcomment.content) %>
+		<%=simple_format h(postcomment.content) %>
 	</div>
 </section>
 <% end %>
