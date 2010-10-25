@@ -4,7 +4,7 @@
 <%= render @post %>
 
 <section id="comments">
-	<% if @post.postcomments.any?%>
+	<% if @post.postcomments.where(:approved => true).any?%>
 <h2>Comments</h2>
 <%= render  @post.postcomments %>
 	<% end %>
@@ -35,7 +35,7 @@
     <%= f.text_area :content %>
   </div>
   <div class="actions">
-    <%= f.submit "Create comment" %>
+    <%= f.submit "Create comment", :class=> "awesome" %>
   </div>
 <%= hidden_field_tag 'post_id', @postcomment.post.id %>
 
