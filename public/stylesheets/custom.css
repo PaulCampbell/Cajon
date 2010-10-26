@@ -7,7 +7,7 @@ a:hover { color:#587427 ; }
 .a_third { width:33%; float:left;  }
 .center { text-align:center; }
 .right { text-align:right; } 
-.rightSpace { padding-right:15px; }
+.rightSpace { padding-right:10px; }
 .leftSpace { padding-left:5px;}
 footer { background-color:#d6d6d6; background-image: url(/images/footerbg.gif); ; border-top:1px solid #a4a4a4; padding:20px 0 20px 0; clear:both;}
 
@@ -196,7 +196,8 @@ h3 { color: #76A4EC; font-weight:bold;}
 
 #error_explanation ul {   margin:0; padding:0; }
 
-
+textarea.error { background-color:white; border:solid 1px red; }
+label.error { background-color:white; padding:5px 0 20px 0;}
 
 /* Super awsome buttons */
 

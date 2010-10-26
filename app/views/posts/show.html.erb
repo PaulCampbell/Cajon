@@ -49,3 +49,16 @@
 	<%= render :partial => "users/aside", :locals => { :user => @post.user } %>
 </aside>
 </div>
+
+<script>
+	$(document).ready(function(){
+		$('#new_postcomment').validate({
+			rules: {
+						"postcomment[content]": "required"
+					},
+			messages: {
+						"postcomment[content]": "Comment required"
+					}
+		});
+	})
+</script>
