@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def index
     @users = User.paginate(:page => params[:users_page])
 	@posts = Post.where(:published => true).paginate(:page => params[:posts_page], :per_page => 5)
-	@title = "Blog roll"
+	@title = "Blog"
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @users }

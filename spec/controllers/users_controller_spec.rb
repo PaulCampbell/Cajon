@@ -20,7 +20,7 @@ describe UsersController do
 
       it "should have the right title" do
         get :index
-        response.should have_selector("title", :content => "Blog roll")
+        response.should have_selector("title", :content => "Blog")
       end
 
       it "should have an element for each user" do
