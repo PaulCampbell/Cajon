@@ -4,8 +4,9 @@ namespace :db do
   desc "Fill database with sample data"
   task :populate => :environment do
     Rake::Task['db:reset'].invoke
-    admin_user = User.create!(:name => "Example User",
+    admin_user = User.create!(:name => "Paul Campbell",
                  :email => "example@railstutorial.org",
+                 :twitter => "Slarty_Bartfast",
                  :password => "foobar",
                  :password_confirmation => "foobar")
     admin_user.toggle!(:admin)
@@ -25,7 +26,7 @@ namespace :db do
     
     User.all(:limit => 3).each do |user|
       50.times do
-        user.posts.create!(:content => Faker::Lorem.paragraphs(paragraph_count = 4), :title => Faker::Lorem.sentence(5), :published => true)
+        user.posts.create!(:content => Faker::Lorem.paragraphs(paragraph_count = 4), :slug => Faker::Lorem.sentences(3), :title => Faker::Lorem.sentence(5), :published => true)
       end
     end  
   end

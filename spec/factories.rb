@@ -12,6 +12,7 @@ end
 
 Factory.define :post do |post|
   post.title "The Post Title"
+  post.slug "The Post slug"
   post.content "My post content"
   post.association :user
 end

@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20101021183927
+# Schema version: 20101027185323
 #
 # Table name: posts
 #
@@ -10,6 +10,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  published  :boolean
+#  slug       :text
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

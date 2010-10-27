@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   # GET /users/1.xml
   def show
     @user = User.find(params[:id])
-	@posts = @user.posts.where(:published => true).paginate(:page => params[:page], :per_page => 10)
+	@posts = @user.posts.where(:published => true).paginate(:page => params[:page], :per_page => 5)
 	@title = @user.name 
     respond_to do |format|
       format.html # show.html.erb

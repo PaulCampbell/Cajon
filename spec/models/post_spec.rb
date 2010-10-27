@@ -6,7 +6,8 @@ describe Post do
     @user = Factory(:user)
     @attr = {
       :content => "here's the body of the post",
-      :title => "The Post Title"
+      :title => "The Post Title",
+	  :slug => "The post slug"
     }
   end
   
@@ -42,7 +43,7 @@ describe Post do
     end
 
     it "should reject long content" do
-      @user.posts.build(:content => "a" * 3001).should_not be_valid
+      @user.posts.build(:content => "a" * 10001).should_not be_valid
     end
 	
 	it "should require nonblank title" do
@@ -51,6 +52,14 @@ describe Post do
 	
 	it "should reject long title" do
       @user.posts.build(:title => "a" * 201).should_not be_valid
+    end
+	
+	it "should require nonblank slug" do
+      @user.posts.build(:slug => "  ").should_not be_valid
+    end
+	
+	it "should reject long slug" do
+      @user.posts.build(:slug => "a" * 501).should_not be_valid
     end
 	
   end

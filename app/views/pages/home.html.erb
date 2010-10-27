@@ -55,14 +55,15 @@
 	<h1>
 		On the blog...
 	</h1>
+<%	@blogposts.each do |post|  %>
 	<section>
 		<h2>
-			Blog title
+		 	<%= post.title %>
 		</h2>
 		<p>
-			Blog slug
+			<%= post.slug %>
 		</p>
 	</section>
-
+<% end %>
 </section>
 </div>

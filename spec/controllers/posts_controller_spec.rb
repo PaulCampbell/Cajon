@@ -51,9 +51,9 @@ describe PostsController do
 	  end
 	  
 	  it "should display all posts" do
-	    post1 = Factory(:post, :user => @user, :content => "The content of post number 1", :title => "Blog post 1", :published => true)
-		post2 = Factory(:post, :user => @user, :content => "The content of post number 2", :title => "Blog post 2", :published => true)
-		post3 = Factory(:post, :user => @user, :content => "The content of post number 3", :title => "Blog post 3", :published => false)
+	    post1 = Factory(:post, :user => @user, :content => "The content of post number 1", :title => "Blog post 1", :slug => "slug 1", :published => true)
+		post2 = Factory(:post, :user => @user, :content => "The content of post number 2", :title => "Blog post 2", :slug => "slug 2", :published => true)
+		post3 = Factory(:post, :user => @user, :content => "The content of post number 3", :title => "Blog post 3", :slug => "slug 3", :published => false)
 	    
 		get :index, :user_id => @user.id 
 	    response.should have_selector("a", :content => post1.title)
@@ -88,7 +88,7 @@ describe PostsController do
     describe "failure" do
 
       before(:each) do
-        @attr = { :content => "", :title => "" }
+        @attr = { :content => "", :title => "", :slug => "" }
       end
 
       it "should not create a post" do
@@ -106,10 +106,10 @@ describe PostsController do
     describe "success" do
 
       before(:each) do
-        @attr = { :content => "Lorem ipsum", :title => "Post Title" }
+        @attr = { :content => "Lorem ipsum", :slug => "slug", :title => "Post Title" }
       end
 
-      it "should create a post" do
+      it "should create a post" do 
         lambda do
           post :create, :post => @attr
         end.should change(Post, :count).by(1)
@@ -220,7 +220,7 @@ describe PostsController do
         @user = Factory(:user)
         test_sign_in(@user)
 		@post = Factory(:post, :user => @user)
-		@attr = { :title => "New title", :content => "New content", :published => 1 }
+		@attr = { :title => "New title", :slug => "new slug",	:content => "New content", :published => 1 }
       end
 	  
 	  it "should update the post" do

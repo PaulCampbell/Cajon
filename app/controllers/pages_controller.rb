@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+	@blogposts = Post.where(:published => true).limit(2)
 	@title = "Home"
   end
 

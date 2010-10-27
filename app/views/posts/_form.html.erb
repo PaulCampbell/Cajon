@@ -15,6 +15,10 @@
     <%= f.text_field :title, :class => "title" %>
   </div>
   <div class="field">
+    <%= f.label :slug %>
+    <%= f.text_area :slug, :class=>"f wmd-ignore smalltextarea" %>
+  </div>
+  <div class="field">
     <%= f.label :content %>
     <%= f.text_area :content %>
   </div>
@@ -31,5 +35,5 @@
  </article> 
 
 <% end %>
-	<script>wmd_options = { output: "Html" };</script>
+	<script>wmd_options = { output: "Html", input: "post_content" };</script>
 	<script type="text/javascript"  src="/javascripts/wmd/wmd.js"></script> 

@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20101021183927
+# Schema version: 20101027185323
 #
 # Table name: posts
 #
@@ -10,17 +10,19 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  published  :boolean
+#  slug       :text
 #
 
 class Post < ActiveRecord::Base
 	belongs_to :user
 	has_many :postcomments, :dependent => :destroy  
 	
-	validates :title, :presence => true, :length => {:maximum => 3000 }
+	validates :title, :presence => true, :length => {:maximum => 200 }
 	validates :user_id, :presence => true 
-	validates :title, :length => { :maximum => 200 }
+	validates :slug, :presence => true, :length => { :maximum => 800 }
+	validates :content, :length => { :maximum => 10000 }
 	
-	attr_accessible :title, :content, :published
+	attr_accessible :title, :content, :published, :slug
 	
 	default_scope :order => 'posts.created_at DESC'
 	
@@ -31,5 +33,5 @@ class Post < ActiveRecord::Base
 	  this.published = true
 	  this.save
 	end
-	
+	 
 end
