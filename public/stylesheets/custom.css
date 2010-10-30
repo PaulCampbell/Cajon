@@ -27,6 +27,10 @@ header nav ul {list-style:none; float:right; position:relative; top:5px; left:10
 header nav ul li { list-style:none; float:left; padding-left: 50px; padding-right:20px; } 
 header nav ul li  a{ color:white; font-weight:bold; text-decoration:none; font-size:200% }
 header nav ul li  a:hover {color: #5b8614; }
+
+footer .secondary, footer .secondary a { color: #868686}
+footer .primary {font-size:130%;}
+
 h2  { color: #5b8614; }
 .h2link a { color: #5b8614; text-decoration:none; } 
 .h2link a:hover { color:#587427  }
