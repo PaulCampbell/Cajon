@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def home
 	@blogposts = Post.where(:published => true).limit(2)
-	@title = "Home"
+	@title = "Web and mobile application development"
   end
 
   def contact
