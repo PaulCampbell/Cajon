@@ -6,10 +6,10 @@ class ContactEmail < ActionMailer::Base
       @recipients = "paulgcampbell@gmail.com"
       @from = email
       @sent_on = sent_at
-	    @body["name"] = name
-  	  @body["email"] = email
-      @body["phone"] = phone
-   	  @body["message"] = message
+	    @name = name
+  	  @email = email
+      @phone = phone
+   	  @message = message
       @headers = {}
   end
 

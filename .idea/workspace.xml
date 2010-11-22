@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fbaac30-3bd6-4d0a-ae3d-22896d7f0cee" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/emailer/index.rhtml" afterPath="$PROJECT_DIR$/app/views/contact_email/contact.rhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mailers/contact_email.rb" afterPath="$PROJECT_DIR$/app/mailers/contact_email.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contact_email/contact.rhtml" afterPath="$PROJECT_DIR$/app/views/contact_email/contact.rhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/contact.html.erb" afterPath="$PROJECT_DIR$/app/views/pages/contact.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/blueprint/screen.css" afterPath="$PROJECT_DIR$/public/stylesheets/blueprint/screen.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/custom.css" afterPath="$PROJECT_DIR$/public/stylesheets/custom.css" />
@@ -33,7 +34,7 @@
       <file leaf-file-name="contact_email.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/mailers/contact_email.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="432" selection-end="432" vertical-scroll-proportion="0.0">
+            <state line="11" column="14" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -93,19 +94,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contact.rhtml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="contact.rhtml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/contact_email/contact.rhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="125" selection-end="125" vertical-scroll-proportion="-4.571429">
+            <state line="6" column="5" selection-start="98" selection-end="98" vertical-scroll-proportion="0.16289593">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pages_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pages_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/pages_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="34" selection-start="410" selection-end="425" vertical-scroll-proportion="0.4924406">
+            <state line="13" column="0" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -208,7 +209,6 @@
         <option value="$PROJECT_DIR$/config/environment.rb" />
         <option value="$PROJECT_DIR$/app/views/posts/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/posts/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/mailers/contact_email.rb" />
         <option value="$PROJECT_DIR$/app/controllers/emailer_controller.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/pages_controller.rb" />
@@ -216,6 +216,8 @@
         <option value="$PROJECT_DIR$/app/views/pages/contact.html.erb" />
         <option value="$PROJECT_DIR$/public/stylesheets/blueprint/screen.css" />
         <option value="$PROJECT_DIR$/public/stylesheets/custom.css" />
+        <option value="$PROJECT_DIR$/app/mailers/contact_email.rb" />
+        <option value="$PROJECT_DIR$/app/views/contact_email/contact.rhtml" />
       </list>
     </option>
   </component>
@@ -849,13 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/contact_email/contact.rhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="125" selection-end="125" vertical-scroll-proportion="-4.571429">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/postcomments/_postcomment.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -903,16 +898,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/mailers/contact_email.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/pages_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="432" selection-end="432" vertical-scroll-proportion="0.0">
+        <state line="13" column="0" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/pages_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/mailers/contact_email.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="34" selection-start="410" selection-end="425" vertical-scroll-proportion="0.4924406">
+        <state line="11" column="14" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/contact_email/contact.rhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="5" selection-start="98" selection-end="98" vertical-scroll-proportion="0.16289593">
           <folding />
         </state>
       </provider>
