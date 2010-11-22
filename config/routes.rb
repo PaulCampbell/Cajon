@@ -24,7 +24,7 @@ Cajon::Application.routes.draw do
   match '/services',   :to => 'pages#services'
   match "/postcomments/removeapproval/:id", :to => "postcomments#removeapproval"
   match "/posts/publish/:id", :to => "posts#publish"
-  
+  match '/pages/sendmail', :to => 'pages#sendmail'
   
   
   root :to => 'pages#home'

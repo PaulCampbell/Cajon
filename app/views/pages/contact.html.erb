@@ -1,7 +1,54 @@
-<section class="container paddingbottom standardpadding">
-<h1>Cajon blog platform</h1>
-<p>
-	<a href="http://www.decoratedworld.co.uk/cajon">Cajon</a>
-      Cajon, a rails 3 blogging platform.
-</p>
-</section>
+<div class="container paddingbottom standardpadding">
+
+    <div class="span-15" id="user-details">
+        <%= form_tag :action => 'sendmail' do %>
+         <h1>Send us a message</h1>
+         <fieldset>
+            <label for="name">Name:</label>
+            <input type="text" name="name" value="" />
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" value=""  />
+
+            <label for="phone">Phone:</label>
+            <input type="text" name="phone" value=""  />
+
+            <label for="message">Your Message:</label>
+            <textarea name="message" rows="0" cols="0"></textarea>
+
+            <input type="submit" value="Send Message" name="submit" class="awesome" />
+
+         </fieldset>
+
+        <% end %>
+    </div>
+
+    <aside class="span-9 last">
+      	<div id="twitter">
+
+	    </div>
+        
+
+    </aside>
+
+  <script src="/javascripts/jquery.twitter.js" type="text/javascript"></script>
+  <script type="text/javascript">
+              $(document).ready(function() {
+                  $("#twitter").getTwitter({
+                      userName: "DecoratedWorld",
+                      numTweets: 5,
+                      loaderText: "Loading tweets...",
+                      slideIn: true,
+                      slideDuration: 750,
+                      showHeading: true,
+                      headingText: "Latest Tweets",
+                      showProfileLink: true,
+                      showTimestamp: true
+                  });
+              });
+          </script>
+
+
+
+
+</div>
