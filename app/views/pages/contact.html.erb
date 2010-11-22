@@ -45,6 +45,21 @@
                       showProfileLink: true,
                       showTimestamp: true
                   });
+
+
+
+                $('form').validate({
+                    rules: {
+                                "email": "required",
+                                "message": "required"
+                            },
+                    messages: {
+                                "email": "Email address required",
+                                "message":"Message required"
+                            }
+                });
+
+
               });
           </script>
 

@@ -116,6 +116,68 @@ font-weight:bold; padding-left:25px; padding-top:16px; padding-bottom:15px; text
 .twitted p.profileLink a { text-decoration:none; color:#76a4ec; }
 .twitted p.profileLink a:hover { color:#587bb3 }
 
+
+
+
+#user-details label {
+		font-size: 100%;
+		color: #666;
+        width:500px;
+        display:block;
+	}
+
+	#user-details form {
+		float: left;
+		border: 1px solid #ddd;
+		padding: 30px 30px 20px 30px;
+		margin: 0px 0 0 0;
+		background: #fff;
+
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+
+		background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#EEE), to(#FFFFFF));
+		background: -moz-linear-gradient(0% 40% 90deg,#FFF, #EEE);
+
+		-webkit-box-shadow:0px 0 50px #ccc;
+		-moz-box-shadow:0px 0 50px #ccc;
+		box-shadow:0px 0 50px #ccc;
+	}
+
+	#user-details fieldset { border: none; padding-left:0; padding-right:0; }
+
+
+
+	#user-details input, #user-details textarea {
+		padding: 8px 0;
+		margin: 4px 0 20px 0;
+		background: #fff;
+		width: 100%;
+		font-size: 100%;
+		color: #555;
+		border: 1px #ddd solid;
+
+		/* -- CSS3 Shadow - create a shadow around each input element -- */
+		-webkit-box-shadow: 0px 0px 4px #aaa;
+		-moz-box-shadow: 0px 0px 4px #aaa;
+		box-shadow: 0px 0px 4px #aaa;
+
+		/* -- CSS3 Transition - define what the transition will be applied to (i.e. the background) -- */
+		-webkit-transition: background 0.3s linear;
+	}
+
+	#user-details textarea {
+		width: 100%;
+		height: 175px;
+	}
+
+	#user-details input:hover, textarea:hover {
+		background: #eee;
+	}
+
+
+
 ul.users { margin:0; padding:0;}
 .users li {
   list-style: none;
@@ -246,64 +308,6 @@ label.error { background-color:white; padding:5px 0 20px 0;}
 		
 
 
-#user-details label {
-		font-size: 100%;
-		color: #666;
-	}
-
-	#user-details form {
-		float: left;
-		border: 1px solid #ddd;
-		padding: 30px 30px 20px 30px;
-		margin: 0px 0 0 0;
-
-		background: #fff;
-
-		/* -- CSS3 - define rounded corners for the form -- */
-		-webkit-border-radius: 10px;
-		-moz-border-radius: 10px;
-		border-radius: 10px;
-
-		/* -- CSS3 - create a background graident -- */
-		background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#EEE), to(#FFFFFF));
-		background: -moz-linear-gradient(0% 40% 90deg,#FFF, #EEE);
-
-		/* -- CSS3 - add a drop shadow -- */
-		-webkit-box-shadow:0px 0 50px #ccc;
-		-moz-box-shadow:0px 0 50px #ccc;
-		box-shadow:0px 0 50px #ccc;
-	}
-
-	#user-details fieldset { border: none; padding-left:0; padding-right:0; }
-
-
-
-	#user-details input, #user-details textarea {
-		padding: 8px 0;
-		margin: 4px 0 20px 0;
-		background: #fff;
-		width: 100%;
-		font-size: 100%;
-		color: #555;
-		border: 1px #ddd solid;
-
-		/* -- CSS3 Shadow - create a shadow around each input element -- */
-		-webkit-box-shadow: 0px 0px 4px #aaa;
-		-moz-box-shadow: 0px 0px 4px #aaa;
-		box-shadow: 0px 0px 4px #aaa;
-
-		/* -- CSS3 Transition - define what the transition will be applied to (i.e. the background) -- */
-		-webkit-transition: background 0.3s linear;
-	}
-
-	#user-details textarea {
-		width: 100%;
-		height: 175px;
-	}
-
-	#user-details input:hover, textarea:hover {
-		background: #eee;
-	}
 
 
 .twitterLink {font-weight:bold; padding-left:70px; padding-right:90px; padding-top:12px; padding-bottom:12px; text-decoration:none; font-size:200%;
