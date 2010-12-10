@@ -23,7 +23,7 @@ header h1 span { position:relative; left:-3000px; }
 .impactSection  h2 { color:#111;  letter-spacing:0px; line-height:23px; font-size:175%}
 
 
-header nav ul {list-style:none; float:right; position:relative; top:5px; left:10px; }
+header nav ul {list-style:none; float:right; position:relative; top:5px; left:10px; width:61%;}
 header nav ul li { list-style:none; float:left; padding-left: 50px; padding-right:20px; } 
 header nav ul li  a{ color:white; font-weight:bold; text-decoration:none; font-size:200% }
 header nav ul li  a:hover {color: #5b8614; }
