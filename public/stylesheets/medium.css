@@ -19,7 +19,7 @@ a:hover { color:#587427 ; }
 
 footer .right-footer { float:left !important; } 
 footer .container div { width:48% !important; }
-.half { width:48%; border-bottom:dashed 1px #666; padding-bottom:20px; padding-top:10px; float:left;}
+.half { width:48%; padding-bottom:20px; padding-top:10px; float:left;}
 .a_third { width:33%; float:left;  }
 .center { text-align:center; }
 .right { text-align:right; } 
