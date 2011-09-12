@@ -313,3 +313,5 @@ label.error { background-color:white; padding:5px 0 20px 0;}
 .twitterLink {font-weight:bold; padding-left:70px; padding-right:90px; padding-top:12px; padding-bottom:12px; text-decoration:none; font-size:200%;
 	color: #3A3A3A; 
 	background-image:url(/images/twitterheader.png); z-index:10; }
+
+aside div { margin-bottom:20px; }
