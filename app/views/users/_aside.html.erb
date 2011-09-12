@@ -15,7 +15,7 @@
 <script type="text/javascript"> 
 			$(document).ready(function() {
 				$("#twitter").getTwitter({
-					userName: "slarty_bartfast",
+					userName: "<%= user.twitter_name %>",
 					numTweets: 5,
 					loaderText: "Loading tweets...",
 					slideIn: true,
